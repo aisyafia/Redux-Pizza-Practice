@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import PizzaList from "./components/PizzaList";
+import { useSelector } from "react-redux";
+import { selectUser } from "./store/user/selectors";
+import AddPizzaForm from "./components/AddPizzaForm";
 
 function App() {
+  const userToHi = useSelector(selectUser);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className="App">
+        <p>Welcome, {userToHi}</p>
+        <PizzaList />
+      </div>
+      <div>
+        <AddPizzaForm />
+      </div>
     </div>
   );
 }
