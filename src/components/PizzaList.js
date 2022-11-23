@@ -15,6 +15,7 @@ const PizzaList = () => {
               <li>
                 {pizza.id} -- {pizza.name} -- {pizza.description}
               </li>
+              <img src={pizza.image} width="125px" alt="pizza pics" />
             </ul>
           );
         })}
